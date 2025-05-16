@@ -392,5 +392,6 @@ Durante este proyecto, pude reforzar y aplicar varios conceptos fundamentales de
 
 ## Contacto
 
-Enlace a Linkedin
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin)](https://www.linkedin.com/in/diegorojasv/)
+Enlace a Linkedin [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin)](https://www.linkedin.com/in/diegorojasv/)<br>
+>💬 💡**TIP**:  Para abrir en una pestaña nueva presiona CTRL+Click izquierdo ó click derecho y abrir en una pestaña nueva 😉
+
