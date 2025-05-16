@@ -1,3 +1,4 @@
+<a id="top"></a>
 # 🔐 Proyecto: Automatización SSH y Despliegue Remoto Multiplataforma
 
 ![Bash](https://img.shields.io/badge/-Bash-4EAA25?logo=gnu-bash&logoColor=white)![SSH](https://img.shields.io/badge/-SSH-000000?logo=ssh)![Vagrant](https://img.shields.io/badge/-Vagrant-1563FF?logo=vagrant&logoColor=white)
@@ -48,7 +49,7 @@ Este proyecto consiste en la **configuración de un entorno automatizado** con b
 ## Objetivo del proyecto
 
 Configurar una solución que permita **administrar múltiples servidores remotos** desde una única máquina controladora usando `SSH` y automatizando todo el proceso con Bash Script, primero mediante contraseña y luego usando **clave pública**. Esta práctica es esencial en entornos de automatización y DevOps.
-<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
+<p align="right">(<a href="#top">Volver al inicio</a>)</p>
 
 ---
 
