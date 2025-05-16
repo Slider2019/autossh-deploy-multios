@@ -12,7 +12,7 @@ Este proyecto consiste en la **configuración de un entorno automatizado** con b
 ## 🗂️ Índice
 
 <!-- Tabla de contenidos -->
-<details close>
+<details open>
   <summary>Tabla de Contenidos</summary>
   <ol>
     <li><a href="#objetivo-del-proyecto">⚙️ Objetivo del proyecto</a></li>
