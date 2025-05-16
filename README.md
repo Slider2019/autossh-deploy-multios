@@ -15,7 +15,7 @@ Este proyecto consiste en la **configuración de un entorno automatizado** con b
 <details close>
   <summary>Tabla de Contenidos</summary>
   <ol>
-    <li><a href="#⚙objetivo-del-proyecto">⚙️ Objetivo del proyecto</a></li>
+    <li><a href="#objetivo-del-proyecto">⚙️ Objetivo del proyecto</a></li>
     <li><a href="#🧱-topología-del-laboratorio">🧱 Topología del laboratorio</a></li>
     <li><a href="#📦-configuración-inicial-con-vagrant">📦 Configuración inicial con Vagrant</a></li>
     <li>
