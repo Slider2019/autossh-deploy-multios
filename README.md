@@ -16,30 +16,31 @@ Este proyecto consiste en la **configuración de un entorno automatizado** con b
   <summary>Tabla de Contenidos</summary>
   <ol>
     <li><a href="#objetivo-del-proyecto">⚙️ Objetivo del proyecto</a></li>
-    <li><a href="#🧱-topología-del-laboratorio">🧱 Topología del laboratorio</a></li>
-    <li><a href="#📦-configuración-inicial-con-vagrant">📦 Configuración inicial con Vagrant</a></li>
+    <li><a href="#topología-del-laboratorio">🧱 Topología del laboratorio</a></li>
+    <li><a href="#configuración-inicial-con-vagrant">📦 Configuración inicial con Vagrant</a></li>
     <li>
-      <a href="#🔧-preparación-de-los-servidores">🔧 Preparación de los servidores</a>
+      <a href="#preparación-de-los-servidores">🔧 Preparación de los servidores</a>
       <ul>
-        <li><a href="#🧾-asignar-nombre-de-host">🧾 Asignar nombre de host</a></li>
-        <li><a href="#🗂️-editar-etchosts">🗂️ Editar /etc/hosts</a></li>
-        <li><a href="#🔁-verificar-conectividad">🔁 Verificar conectividad</a></li>
-        <li><a href="#🧑‍💻-crear-usuario-devops">🧑‍💻 Crear usuario devops</a></li>
-        <li><a href="#🔑-permisos-sudo-sin-contraseña">🔑 Permisos sudo sin contraseña</a></li>
+        <li><a href="#asignar-nombre-de-host">🧾 Asignar nombre de host</a></li>
+        <li><a href="#editar-etchosts">🗂️ Editar /etc/hosts</a></li>
+        <li><a href="#verificar-conectividad">🔁 Verificar conectividad</a></li>
+        <li><a href="#crear-usuario-devops">🧑‍💻 Crear usuario devops</a></li>
+        <li><a href="#permisos-sudo-sin-contraseña">🔑 Permisos sudo sin contraseña</a></li>
       </ul>
     </li>
-    <li><a href="#⚠️-problemas-con-ubuntu-web03">⚠️ Problemas con Ubuntu (Web03)</a></li>
-    <li><a href="#🚀-ejecución-remota-desde-script-box">🚀 Ejecución remota desde Script Box</a></li>
-    <li><a href="#🔐-autenticación-ssh-con-clave-pública">🔐 Autenticación SSH con clave pública</a></li>
-    <li><a href="#🧠-conceptos-clave-sobre-claves-ssh">🧠 Conceptos clave sobre claves SSH</a></li>
-    <li><a href="#🧪-preparando-automatización-remota">🧪 Preparando automatización remota</a></li>
-    <li><a href="#🧪-prueba-local-del-script">🧪 Prueba local del script</a></li>
-    <li><a href="#🧠-automatización-con-scp-y-ssh">🧠 Automatización con <code>scp</code> y <code>ssh</code></a></li>
-    <li><a href="#🛠️--pasos-técnicos-explicados">🛠️ Pasos Técnicos Explicados</a></li>
-    <li><a href="#📘-lecciones-aprendidas">📘 Lecciones aprendidas</a></li>
+    <li><a href="#problemas-con-ubuntu-web03">⚠️ Problemas con Ubuntu (Web03)</a></li>
+    <li><a href="#ejecución-remota-desde-script-box">🚀 Ejecución remota desde Script Box</a></li>
+    <li><a href="#autenticación-ssh-con-clave-pública">🔐 Autenticación SSH con clave pública</a></li>
+    <li><a href="#conceptos-clave-sobre-claves-ssh">🧠 Conceptos clave sobre claves SSH</a></li>
+    <li><a href="#preparando-automatización-remota">🧪 Preparando automatización remota</a></li>
+    <li><a href="#prueba-local-del-script">🧪 Prueba local del script</a></li>
+    <li><a href="#automatización-con-scp-y-ssh">🧠 Automatización con <code>scp</code> y <code>ssh</code></a></li>
+    <li><a href="#pasos-técnicos-explicados">🛠️ Pasos Técnicos Explicados</a></li>
+    <li><a href="#lecciones-aprendidas">📘 Lecciones aprendidas</a></li>
   </ol>
 </details>
 <br>
+
 
 
 ---
@@ -51,7 +52,7 @@ Configurar una solución que permita **administrar múltiples servidores remotos
 
 ---
 
-## 🧱 Topología del laboratorio
+## Topología del laboratorio
 
 - 🖥️ **Script Box**: Máquina de control central.
 - 🖥️ **web01 & web02**: Servidores CentOS.
@@ -60,7 +61,7 @@ Configurar una solución que permita **administrar múltiples servidores remotos
 
 ---
 
-## 📦 Configuración inicial con Vagrant
+## Configuración inicial con Vagrant
 
 ```bash
 vagrant up
@@ -78,7 +79,7 @@ web03 → 10.0.13.15 / 10.13.10.16 (Ubuntu)
 
 ----------
 
-## 🔧 Preparación de los servidores
+## Preparación de los servidores
 
 ### 🧾 Asignar nombre de host
 
@@ -92,7 +93,7 @@ _Repetir para web02 y web03._
 
 ----------
 
-### 🗂️ Editar /etc/hosts 
+### Editar /etc/hosts 
 
 Desde Script Box:
 
@@ -110,7 +111,7 @@ Añadir:
 
 ----------
 
-### 🔁 Verificar conectividad
+### Verificar conectividad
 
 ```bash
 ping -c 2 web01
@@ -120,7 +121,7 @@ ping -c 2 web03
 
 ----------
 
-### 🧑‍💻 Crear usuario devops
+### Crear usuario devops
 
 Crear usuario devops en cada servidor
 
@@ -131,7 +132,7 @@ sudo passwd devops
 
 ----------
 
-### 🔑 Permisos sudo sin contraseña
+### Permisos sudo sin contraseña
 
 Editar el archivo sudoers:
 ```bash
@@ -147,7 +148,7 @@ devops ALL=(ALL) NOPASSWD:ALL
 
 ----------
 
-## ⚠️ Problemas con Ubuntu (Web03)
+## Problemas con Ubuntu (Web03)
 
 Ubuntu no permite inicio por contraseña por defecto. Solución:
 
@@ -173,7 +174,7 @@ Ubuntu no permite inicio por contraseña por defecto. Solución:
 
 ----------
 
-## 🚀 Ejecución remota desde Script Box
+## Ejecución remota desde Script Box
 
 Con contraseña:
 
@@ -187,7 +188,7 @@ ssh devops@web01 uptime
 
 ----------
 
-## 🔐 Autenticación SSH con clave pública
+## Autenticación SSH con clave pública
 
 1.  Generar claves en Script Box:
     
@@ -215,7 +216,7 @@ ssh devops@web01 uptime
 
 ----------
 
-## 🧠 Conceptos clave sobre claves SSH
+## Conceptos clave sobre claves SSH
 
 -   La **clave privada** es larga y debe mantenerse segura.
 -   La **clave pública** es más corta y se distribuye.
@@ -232,7 +233,7 @@ ssh devops@web01 uptime
 
 ----------
 
-## 🧪 Preparando automatización remota
+## Preparando automatización remota
 
 ### 🛠️ Crear script multiOS (websetup_multios.sh)
 
@@ -272,7 +273,7 @@ ssh devops@web01 uptime
 
 ----------
 
-## 🧪 Prueba local del script
+## Prueba local del script
 
 ```bash
 bash websetup_multios.sh
@@ -281,7 +282,7 @@ bash websetup_multios.sh
 ✔️ En la máquina local (CentOS), el script ejecutará el bloque para CentOS.
 <p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
 
-## 🧠 Automatización con `scp` y `ssh`
+## Automatización con `scp` y `ssh`
 
 ### 🔍 **Objetivos**
 
@@ -292,7 +293,7 @@ Automatizar el despliegue y ejecución de scripts en múltiples máquinas remota
 
 ----------
 
-## 🛠️ **Pasos Técnicos Explicados**
+## Pasos Técnicos Explicados
 
 ### 📁 1. **Transferencia de Archivos con `scp`**
 
@@ -356,7 +357,7 @@ Una vez ejecutado el script:
 
 ----------
 
-## 📘 Lecciones aprendidas
+## Lecciones aprendidas
 
 Durante este proyecto, pude reforzar y aplicar varios conceptos fundamentales de administración y automatización de sistemas:
 
