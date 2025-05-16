@@ -81,7 +81,7 @@ web03 → 10.0.13.15 / 10.13.10.16 (Ubuntu)
 
 ## Preparación de los servidores
 
-### 🧾 Asignar nombre de host
+### Asignar nombre de host
 
 Entrar a cada máquina y modificar `/etc/hostname` con:
 
