@@ -44,7 +44,7 @@ Este proyecto consiste en la **configuración de un entorno automatizado** con b
 
 ---
 
-## ⚙️ Objetivo del proyecto
+## Objetivo del proyecto
 
 Configurar una solución que permita **administrar múltiples servidores remotos** desde una única máquina controladora usando `SSH` y automatizando todo el proceso con Bash Script, primero mediante contraseña y luego usando **clave pública**. Esta práctica es esencial en entornos de automatización y DevOps.
 <p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
