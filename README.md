@@ -37,6 +37,7 @@ Este proyecto consiste en la **configuración de un entorno automatizado** con b
     <li><a href="#automatización-con-scp-y-ssh">🧠 Automatización con <code>scp</code> y <code>ssh</code></a></li>
     <li><a href="#pasos-técnicos-explicados">🛠️ Pasos Técnicos Explicados</a></li>
     <li><a href="#lecciones-aprendidas">📘 Lecciones aprendidas</a></li>
+    <li><a href="#contacto">📬 Contacto</a></li>
   </ol>
 </details>
 <br>
@@ -57,7 +58,7 @@ Configurar una solución que permita **administrar múltiples servidores remotos
 - 🖥️ **Script Box**: Máquina de control central.
 - 🖥️ **web01 & web02**: Servidores CentOS.
 - 🖥️ **web03**: Servidor Ubuntu *(opcional según recursos)*.
-<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
+<p align="right">(<a href="#índice">Volver al inicio</a>)</p>
 
 ---
 
@@ -75,7 +76,7 @@ web01 → 10.0.13.13 / 10.13.10.14
 web02 → 10.0.13.14 / 10.13.10.15
 web03 → 10.0.13.15 / 10.13.10.16 (Ubuntu)
 ```
-<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
+<p align="right">(<a href="#índice">Volver al inicio</a>)</p>
 
 ----------
 
@@ -144,7 +145,7 @@ Añadir al final:
 ```text
 devops ALL=(ALL) NOPASSWD:ALL
 ```
-<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
+<p align="right">(<a href="#índice">Volver al inicio</a>)</p>
 
 ----------
 
@@ -169,7 +170,7 @@ Ubuntu no permite inicio por contraseña por defecto. Solución:
     ```bash
     sudo systemctl restart ssh
     ```
-    <p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
+    <p align="right">(<a href="#índice">Volver al inicio</a>)</p>
     
 
 ----------
@@ -184,7 +185,7 @@ ssh devops@web01 uptime
 
 > 👉 Esto conecta brevemente, ejecuta el comando, y vuelve a Script Box
 > sin mantener la sesión abierta.
-<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
+<p align="right">(<a href="#índice">Volver al inicio</a>)</p>
 
 ----------
 
@@ -212,7 +213,7 @@ ssh devops@web01 uptime
     
 
 💡 _Ya no pedirá contraseña._
-<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
+<p align="right">(<a href="#índice">Volver al inicio</a>)</p>
 
 ----------
 
@@ -229,7 +230,7 @@ ssh devops@web01 uptime
     
 
 📌 Si la llave calza con la cerradura del servidor, ¡acceso garantizado sin contraseña!
-<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
+<p align="right">(<a href="#índice">Volver al inicio</a>)</p>
 
 ----------
 
@@ -269,7 +270,7 @@ ssh devops@web01 uptime
     
 
 ✅ Gracias al uso de variables (`$PKG`, `$SVC`), podemos reutilizar comandos.
-<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
+<p align="right">(<a href="#índice">Volver al inicio</a>)</p>
 
 ----------
 
@@ -280,7 +281,7 @@ bash websetup_multios.sh
 ```
 
 ✔️ En la máquina local (CentOS), el script ejecutará el bloque para CentOS.
-<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
+<p align="right">(<a href="#índice">Volver al inicio</a>)</p>
 
 ## Automatización con `scp` y `ssh`
 
@@ -337,7 +338,7 @@ done
 -   Copia el script `websetup_multios.sh` al directorio `/tmp/` de cada host
 -   Lo ejecuta con `sudo` usando `ssh`
 -   Luego limpia archivos temporales tras la ejecución
-<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
+<p align="right">(<a href="#índice">Volver al inicio</a>)</p>
 
 ----------
 
@@ -375,7 +376,7 @@ Durante este proyecto, pude reforzar y aplicar varios conceptos fundamentales de
     
 
 🧠 **Este proyecto fue una base perfecta para entender la automatización en ambientes DevOps. Me dio confianza para avanzar hacia herramientas más avanzadas como Ansible, CI/CD y orquestación.**
-<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
+<p align="right">(<a href="#índice">Volver al inicio</a>)</p>
 
 ----------
 > 💬 💡 _"Este tipo de scripting representa la base de muchas herramientas de automatización como Ansible. Aprender a hacerlo a mano es crucial para entender lo que ocurre bajo el capó."_
@@ -387,11 +388,9 @@ Durante este proyecto, pude reforzar y aplicar varios conceptos fundamentales de
 ----------
 
 🚀 **Si, has llegado hasta aquí, ¡Gracias por leer!. Si te interesa ver el código o probarlo, clona el repo y comienza tu propia automatización y si tienes alguna consulta o duda, enviame un mensaje privado por linkedin**
-<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
-<br>
-<br>
+<p align="right">(<a href="#índice">Volver al inicio</a>)</p>
 
-## 📬 Contacto
+## Contacto
 
 Enlace a Linkedin
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin)](https://www.linkedin.com/in/diegorojasv/)
