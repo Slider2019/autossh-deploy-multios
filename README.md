@@ -11,30 +11,43 @@ Este proyecto consiste en la **configuración de un entorno automatizado** con b
 
 ## 🗂️ Índice
 
-1. [⚙️ Objetivo del proyecto](#⚙️-objetivo-del-proyecto)
-2. [🧱 Topología del laboratorio](#🧱-topología-del-laboratorio)
-3. [📦 Configuración inicial con Vagrant](#📦-configuración-inicial-con-vagrant)
-4. [🔧 Preparación de los servidores](#🔧-preparación-de-los-servidores)
-    - [🧾 Asignar nombre de host](#🧾-asignar-nombre-de-host)
-    - [🗂️ Editar /etc/hosts](#🗂️-editar-etchosts)
-    - [🔁 Verificar conectividad](#🔁-verificar-conectividad)
-    - [🧑‍💻 Crear usuario devops](#🧑‍💻-crear-usuario-devops)
-    - [🔑 Permisos sudo sin contraseña](#🔑-permisos-sudo-sin-contraseña)
-5. [⚠️ Problemas con Ubuntu (Web03)](#⚠️-problemas-con-ubuntu-web03)
-6. [🚀 Ejecución remota desde Script Box](#🚀-ejecución-remota-desde-script-box)
-7. [🔐 Autenticación SSH con clave pública](#🔐-autenticación-ssh-con-clave-pública)
-8. [🧠 Conceptos clave sobre claves SSH](#🧠-conceptos-clave-sobre-claves-ssh)
-9. [🧪 Preparando automatización remota](#🧪-preparando-automatización-remota)
-10. [🧪 Prueba local del script](#🧪-prueba-local-del-script) 
-11. [🧠 Automatización con `scp` y `ssh`](#🧠-automatización-con-scp-y-ssh)
-12. [🛠️  Pasos Técnicos Explicados](#🛠️-pasos-técnicos-explicados)
-13. [📘 Lecciones aprendidas](#📘-lecciones-aprendidas)
+<!-- Tabla de contenidos -->
+<details close>
+  <summary>Tabla de Contenidos</summary>
+  <ol>
+    <li><a href="#⚙️-objetivo-del-proyecto">⚙️ Objetivo del proyecto</a></li>
+    <li><a href="#🧱-topología-del-laboratorio">🧱 Topología del laboratorio</a></li>
+    <li><a href="#📦-configuración-inicial-con-vagrant">📦 Configuración inicial con Vagrant</a></li>
+    <li>
+      <a href="#🔧-preparación-de-los-servidores">🔧 Preparación de los servidores</a>
+      <ul>
+        <li><a href="#🧾-asignar-nombre-de-host">🧾 Asignar nombre de host</a></li>
+        <li><a href="#🗂️-editar-etchosts">🗂️ Editar /etc/hosts</a></li>
+        <li><a href="#🔁-verificar-conectividad">🔁 Verificar conectividad</a></li>
+        <li><a href="#🧑‍💻-crear-usuario-devops">🧑‍💻 Crear usuario devops</a></li>
+        <li><a href="#🔑-permisos-sudo-sin-contraseña">🔑 Permisos sudo sin contraseña</a></li>
+      </ul>
+    </li>
+    <li><a href="#⚠️-problemas-con-ubuntu-web03">⚠️ Problemas con Ubuntu (Web03)</a></li>
+    <li><a href="#🚀-ejecución-remota-desde-script-box">🚀 Ejecución remota desde Script Box</a></li>
+    <li><a href="#🔐-autenticación-ssh-con-clave-pública">🔐 Autenticación SSH con clave pública</a></li>
+    <li><a href="#🧠-conceptos-clave-sobre-claves-ssh">🧠 Conceptos clave sobre claves SSH</a></li>
+    <li><a href="#🧪-preparando-automatización-remota">🧪 Preparando automatización remota</a></li>
+    <li><a href="#🧪-prueba-local-del-script">🧪 Prueba local del script</a></li>
+    <li><a href="#🧠-automatización-con-scp-y-ssh">🧠 Automatización con <code>scp</code> y <code>ssh</code></a></li>
+    <li><a href="#🛠️--pasos-técnicos-explicados">🛠️ Pasos Técnicos Explicados</a></li>
+    <li><a href="#📘-lecciones-aprendidas">📘 Lecciones aprendidas</a></li>
+  </ol>
+</details>
+<br>
+
 
 ---
 
 ## ⚙️ Objetivo del proyecto
 
 Configurar una solución que permita **administrar múltiples servidores remotos** desde una única máquina controladora usando `SSH` y automatizando todo el proceso con Bash Script, primero mediante contraseña y luego usando **clave pública**. Esta práctica es esencial en entornos de automatización y DevOps.
+<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
 
 ---
 
@@ -43,6 +56,7 @@ Configurar una solución que permita **administrar múltiples servidores remotos
 - 🖥️ **Script Box**: Máquina de control central.
 - 🖥️ **web01 & web02**: Servidores CentOS.
 - 🖥️ **web03**: Servidor Ubuntu *(opcional según recursos)*.
+<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
 
 ---
 
@@ -60,6 +74,7 @@ web01 → 10.0.13.13 / 10.13.10.14
 web02 → 10.0.13.14 / 10.13.10.15
 web03 → 10.0.13.15 / 10.13.10.16 (Ubuntu)
 ```
+<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
 
 ----------
 
@@ -128,6 +143,7 @@ Añadir al final:
 ```text
 devops ALL=(ALL) NOPASSWD:ALL
 ```
+<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
 
 ----------
 
@@ -152,6 +168,7 @@ Ubuntu no permite inicio por contraseña por defecto. Solución:
     ```bash
     sudo systemctl restart ssh
     ```
+    <p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
     
 
 ----------
@@ -166,6 +183,7 @@ ssh devops@web01 uptime
 
 > 👉 Esto conecta brevemente, ejecuta el comando, y vuelve a Script Box
 > sin mantener la sesión abierta.
+<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
 
 ----------
 
@@ -193,6 +211,7 @@ ssh devops@web01 uptime
     
 
 💡 _Ya no pedirá contraseña._
+<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
 
 ----------
 
@@ -209,6 +228,7 @@ ssh devops@web01 uptime
     
 
 📌 Si la llave calza con la cerradura del servidor, ¡acceso garantizado sin contraseña!
+<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
 
 ----------
 
@@ -244,12 +264,11 @@ ssh devops@web01 uptime
       sudo apt install $PKG -y
       sudo systemctl start $SVC
     fi
-    
-    
     ```
     
 
 ✅ Gracias al uso de variables (`$PKG`, `$SVC`), podemos reutilizar comandos.
+<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
 
 ----------
 
@@ -260,8 +279,7 @@ bash websetup_multios.sh
 ```
 
 ✔️ En la máquina local (CentOS), el script ejecutará el bloque para CentOS.
-
-<br>
+<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
 
 ## 🧠 Automatización con `scp` y `ssh`
 
@@ -318,6 +336,7 @@ done
 -   Copia el script `websetup_multios.sh` al directorio `/tmp/` de cada host
 -   Lo ejecuta con `sudo` usando `ssh`
 -   Luego limpia archivos temporales tras la ejecución
+<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
 
 ----------
 
@@ -355,6 +374,7 @@ Durante este proyecto, pude reforzar y aplicar varios conceptos fundamentales de
     
 
 🧠 **Este proyecto fue una base perfecta para entender la automatización en ambientes DevOps. Me dio confianza para avanzar hacia herramientas más avanzadas como Ansible, CI/CD y orquestación.**
+<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
 
 ----------
 > 💬 💡 _"Este tipo de scripting representa la base de muchas herramientas de automatización como Ansible. Aprender a hacerlo a mano es crucial para entender lo que ocurre bajo el capó."_
@@ -366,13 +386,11 @@ Durante este proyecto, pude reforzar y aplicar varios conceptos fundamentales de
 ----------
 
 🚀 **Si, has llegado hasta aquí, ¡Gracias por leer!. Si te interesa ver el código o probarlo, clona el repo y comienza tu propia automatización y si tienes alguna consulta o duda, enviame un mensaje privado por linkedin**
+<p align="right">(<a href="#🗂️-índice">Volver al inicio</a>)</p>
+<br>
+<br>
 
 ## 📬 Contacto
-[🔝 Volver al índice](#🗂️-índice)
-
-<h2>📡 Resolución de nombres <a href="#-índice" style="float:right; font-size: 16px;">🔝 Índice</a></h2>
-
-
 
 Enlace a Linkedin
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin)](https://www.linkedin.com/in/diegorojasv/)
