@@ -1,11 +1,11 @@
-# 🔐 Proyecto: Automatización SSH y Despliegue Remoto Multiplataforma
+# 🔐 Proyecto: Automatización SSH y Despliegue Remoto Multiplataforma On-Premise
 
 ![Bash](https://img.shields.io/badge/-Bash-4EAA25?logo=gnu-bash&logoColor=white)![SSH](https://img.shields.io/badge/-SSH-000000?logo=ssh)![Vagrant](https://img.shields.io/badge/-Vagrant-1563FF?logo=vagrant&logoColor=white)
 
 
 ## 📚 Descripción del Proyecto
 
-Este proyecto consiste en la **configuración de un entorno automatizado** con bash scripting para ejecutar comandos de forma remota desde una máquina central (llamada `Script Box`) hacia servidores remotos (`web01`, `web02`, `web03`) utilizando **SSH**. Se configuran usuarios, permisos, conectividad y autenticación basada en contraseña y clave pública para facilitar tareas de administración remota y automatización en entornos tipo DevOps.
+Este proyecto consiste en la **configuración de un entorno automatizado** con bash scripting para ejecutar comandos de forma remota desde una máquina central (llamada `Script Box`) hacia servidores remotos (`web01`, `web02`, `web03`) utilizando **SSH** y en entorno On-Premise. Se configuran usuarios, permisos, conectividad y autenticación basada en contraseña y clave pública para facilitar tareas de administración remota y automatización en entornos tipo DevOps.
 
 ---
 
